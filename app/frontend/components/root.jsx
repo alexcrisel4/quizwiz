@@ -1,8 +1,16 @@
 import { Route, HashRouter } from 'react-router-dom';
+import React from "react";
+import { Provider } from "react-redux";
+import App from './App';
 
-const Root = () => (
-  <HashRouter>
-    // HashRouter can only have a single child component, so we wrap our routes in this div
-   
-  </HashRouter>
+
+const Root = ({store}) => (
+  <Provider store ={store}>
+    <HashRouter>
+      <App/>
+    </HashRouter>
+  </Provider>
+  
 );
+
+export default Root;
