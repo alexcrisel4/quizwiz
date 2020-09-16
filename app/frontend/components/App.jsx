@@ -5,3 +5,5 @@ const App = () => (
     <h1>QUIZ WIZ</h1>
   </div>
 );
+
+export default App;

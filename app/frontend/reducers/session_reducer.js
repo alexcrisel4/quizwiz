@@ -1,4 +1,3 @@
-const { RECEIVE_USER, LOGOUT_USER } = require("../actions/session_actions")
 
 import {RECEIVE_USER, LOGOUT_USER} from "../actions/session_actions";
 
