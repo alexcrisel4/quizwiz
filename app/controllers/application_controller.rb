@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user
+  helper_method :current_user, :logged_in?
 
+  def logged_in?
+    !!current_user
+  end 
+  
   def require_current_user!
    redirect_to new_session_url if current_user.nil? 
   end

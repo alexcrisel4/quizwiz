@@ -2,9 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from './components/root';
 import configureStore from "./store/store";
+import {signup} from './util/session_util';
+window.signup = signup;
 
 document.addEventListener("DOMContentLoaded", () => {
 
+
+  
   let store;
   if (window.currentUser) {
     const preloadedState = {
