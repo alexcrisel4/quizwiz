@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
     !!current_user
   end 
   
-  def require_current_user!
-   redirect_to new_session_url if current_user.nil? 
-  end
+  # def require_current_user!
+  #  redirect_to new_session_url if current_user.nil? 
+  # end
   
   def login!(user)
     @current_user = user 
