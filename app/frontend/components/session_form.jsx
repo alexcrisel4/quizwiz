@@ -25,8 +25,9 @@ export default () => {
   }
 
   return(
-    <div>
+    <div className="session-form-container">
       <form onSubmit={e => handleSubmit(e)}>
+        <div className="title">Your account details</div>
         <label htmlFor="email">Email
           <input placeholder="lizzobeemailing@gmail.com" type="text" value={email} onChange={e=>setEmail(e.currentTarget.value)}/>
         </label>
