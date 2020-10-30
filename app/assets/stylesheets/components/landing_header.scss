@@ -1,0 +1,42 @@
+.landing-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 72px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
+
+  .btn-container {
+    display: flex;
+    justify-content: space-between;
+
+    margin-right: 16px;
+
+    .btn {
+      padding: 8px 12px;
+      border-radius: 8px;
+      margin: 18px;
+
+      color: #fff;
+      font-size: 16px;
+
+      transition: background-color 0.14s ease;
+
+      &.login {
+        background-color: rgba(0,0,0,0.5);
+
+        &:hover {
+          background-color: rgba(0,0,0,0.8);
+        }
+      }
+
+      &.signup {
+        background-color: #00c985;
+
+        &:hover {
+          background-color: #00ab71;
+        }
+      }
+    }
+  }
+}
