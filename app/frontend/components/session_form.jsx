@@ -26,20 +26,20 @@ export default () => {
 
   return(
     <div className="session-form-container">
-      <form onSubmit={e => handleSubmit(e)}>
+      <form className={formType} onSubmit={e => handleSubmit(e)}>
         <div className="title">Your account details</div>
         <label htmlFor="email">Email
           <input placeholder="lizzobeemailing@gmail.com" type="text" value={email} onChange={e=>setEmail(e.currentTarget.value)}/>
         </label>
-        {formType === "signup" ? <label htmlFor="first-name">Name
+        {formType === "signup" ? <label htmlFor="first-name">First name
           <input placeholder="Lizzo" type="text" value={firstName} onChange={e=>setFirstName(e.currentTarget.value)}/>
         </label> : ""}
         {formType === "signup" ?
-        <label htmlFor="last-name">
-          <input type="text" value={lastName} onChange={e=>setLastName(e.currentTarget.value)}/>
+        <label htmlFor="last-name">Last name
+          <input placeholder="Bee" type="text" value={lastName} onChange={e=>setLastName(e.currentTarget.value)}/>
         </label> : "" }
         <label htmlFor="password">Password
-          <input type="password" name="" id="" value={password} onChange={e=>setPassword(e.currentTarget.value)}/>
+          <input placeholder="******" type="password" name="" id="" value={password} onChange={e=>setPassword(e.currentTarget.value)}/>
         </label>
        <input type="submit" value={formType === "signup" ? "Sign Up" : "Login"}/>
       </form>
