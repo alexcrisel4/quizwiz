@@ -14,13 +14,11 @@
  *= require_self
  */
 
-
-// Components
-@import "components/session_form.scss";
-
 // Reset
 @import "reset.scss";
 
 // Layout
 @import "layout.scss";
 
+// Components
+@import "components/session_form.scss";

@@ -3,13 +3,13 @@
     display: flex;
     flex-direction: column;
 
+    box-sizing: content-box;
     max-width: 400px;
     padding: 40px;
+    background-color: #fff;
     border-radius: 8px;
     border-bottom: 4px solid #dadada;
     margin: auto;
-
-    font-family: 'Open Sans', sans-serif, Helvetica, Arial;
 
     .title {
       font-size: 28px;
@@ -38,14 +38,38 @@
 
       color: #292a3a;
       font-size: 16px;
+
+      &:hover {
+        border: 1px solid rgba(0,0,0,0.33);
+      }
+
+      &:focus {
+        background-color: rgba(0,0,0,0.03);
+      }
+
+      &::placeholder {
+        color: rgba(0,0,0,0.33);
+      }
     }
 
     input[type = submit] {
-      background-color: #8854C0;
-      box-shadow: 0 4px 0 0 rgba(0,0,0,0.1),0 4px 0 0 #8854C0;
+      box-shadow: 0 4px 0 0 rgba(0,0,0,0.1),0 4px 0 0 #8854c0;
       margin-top: 24px;
 
       color: #fff;
+      text-align: center;
+    }
+
+    &.signup {
+      input[type = submit] {
+        background-color: #8854c0;
+      }
+    }
+
+    &.login {
+      input[type = submit] {
+        background-color: #7d72ec;
+      }
     }
   }
 
