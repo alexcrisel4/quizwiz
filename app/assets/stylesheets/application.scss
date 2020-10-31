@@ -21,7 +21,6 @@
 @import "layout.scss";
 
 // Components
-
-@import "components/landing_header.scss";
-
-@import "components/session_form.scss";
+@import "landing/landing.scss";
+@import "landing/header.scss";
+@import "landing/session_form.scss";
