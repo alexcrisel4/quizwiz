@@ -1,15 +1,12 @@
 import React from "react";
-import {AuthRoute, ProtectedRoute} from "../util/route_util.js";
-import SessionForm from "../components/session_form";
-
-import Landing from "../components/landing";
+import { AuthRoute, ProtectedRoute } from "../util/route_util.js";
+import Landing from "./landing/landing";
 
 const App = () => (
   <div>
-    <AuthRoute exact path ='/' component={SessionForm} /> {/* replace with Landing later */}
-    <AuthRoute path='/login' component={SessionForm} />
-    <AuthRoute path='/signup' component={SessionForm} />
-
+    <AuthRoute exact path ='/' component={Landing} />
+    <AuthRoute path='/login' component={Landing} />
+    <AuthRoute path='/signup' component={Landing} />
   </div>
 );
 

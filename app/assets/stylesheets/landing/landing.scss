@@ -1,0 +1,58 @@
+.landing-container {
+  .welcome-container {
+    margin: 100px 0 0 120px;
+
+    .title {
+      color: #fff;
+      font-size: 48px;
+    }
+
+    .description {
+      margin: 16px 0;
+
+      color: rgba(255,255,255,0.7);
+      font-size: 24px;
+    }
+
+    .signup {
+      display: block;
+
+      width: 220px;
+      height: 58px;
+      background-color: #00c985;
+      padding: 20px 26px;
+      border-radius: 8px;
+      box-shadow: 0 4px 0 rgba(0,0,0,0.15),0 4px 0 #00C985,0 4px 6px rgba(0,0,0,0.45);
+      margin: 18px 0;
+
+      color: #fff;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 24px;
+      text-align: center;
+
+      transition: all 0.2s;
+
+      &:hover {
+        box-shadow: 0 1px 2px rgba(0,0,0,0.45);
+        transform: translateY(4px);
+      }
+    }
+
+    .login {
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+
+      a {
+        margin-left: 8px;
+
+        color: #efa929;
+        font-weight: 600;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
