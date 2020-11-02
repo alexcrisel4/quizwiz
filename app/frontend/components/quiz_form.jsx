@@ -8,15 +8,15 @@ export default () => {
   const [title, setTitle] = useState("");
   const [subject, setSubject] = useState("");
   
-  const currentUser = useSelector(state => state.user.id)
+  const currentUser = useSelector(state => state.session.id)
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(createQuiz({title, subject, currentUser}))
+    dispatch(createQuiz({title, subject, user_id: currentUser}))
   }
 
-  const buttonSwitch = () => {
-    
+  const selected = (selectedSubject) => {
+    return subject === selectedSubject ? "selected" : ""
   }
 
   return (
@@ -27,8 +27,8 @@ export default () => {
         </label>
         <label htmlFor="quiz-subject">2. Choose a subject
           <div className="subject-container">
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Mathematics" className="subject">Mathematics</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="English" className="subject">English</button>
+            <button className={selected("Mathematics")}onClick={()=>setSubject("Mathematics")} className="subject">Mathematics</button>
+            <button className={selected("English")} onClick={e=>setSubject(e.currentTarget.value)} value="English" className="subject">English</button>
             <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Physics" className="subject">Physics</button>
             <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Chemistry" className="subject">Chemistry</button>
             <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Science" className="subject">Science</button>

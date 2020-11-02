@@ -1,4 +1,4 @@
-import {createQuiz} from '../actions/quiz_actions'
+import {RECEIVE_QUIZ} from '../actions/quiz_actions'
 
 const _nullQuiz = { id: null }
 let newState

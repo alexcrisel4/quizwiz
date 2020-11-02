@@ -5,3 +5,8 @@ export const createQuiz = quiz => (
     data: {quiz}
   })
 )
+
+//export const deleteQuiz 
+// update 
+// getQuiz
+// getQuizzes 
