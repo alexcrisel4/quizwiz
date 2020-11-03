@@ -1,10 +1,10 @@
 import React from "react";
-import sidebar from "./sidebar"
+import Sidebar from "./sidebar"
 
 export default () => {
   return (
     <div>
-      <sidebar/>
+      <Sidebar/>
     </div>
   )
 }

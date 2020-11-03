@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.logout = logout;
 
   
-  // let store;
-  let store = configureStore();
+  let store;
+ 
   if (window.currentUser) {
     const preloadedState = {
       entities: {
