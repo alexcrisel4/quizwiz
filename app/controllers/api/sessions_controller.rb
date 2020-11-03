@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
       render json: "Incorrect email or password"
     else 
       login!(user)
-      # redirect_to user_url
+      render json: current_user
     end
   end
 

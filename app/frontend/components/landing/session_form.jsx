@@ -17,9 +17,11 @@ export default props => {
     let user
     if(formType === "signup") {
       user = { email, name: firstName + " " + lastName, password }
+
       dispatch(signup(user))
     } else {
       user = { email, password}
+      
       dispatch(login(user))
     }
   }
