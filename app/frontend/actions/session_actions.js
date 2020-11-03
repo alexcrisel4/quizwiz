@@ -4,7 +4,7 @@ export const RECEIVE_USER = 'RECEIVE_USER';
 export const LOGOUT_USER = 'LOGOUT_USER';
 
 export const receiveUser = user => {
-  console.log(user)
+
   return ({
     type: RECEIVE_USER,
     user

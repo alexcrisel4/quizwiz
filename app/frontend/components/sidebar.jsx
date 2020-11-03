@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import {getUser} from "../actions/user_actions";
@@ -6,17 +6,30 @@ import {getUser} from "../actions/user_actions";
 
 
 export default ()=> {
-  const dispatch = useDispatch();
-// const currentUserID = useSelector(state => state.session.id);
-// console.log(currentUserID);
-// const currentUser = dispatch(getUser(currentUserID));
-  let currentUser
+  const [currentUser, setCurrentUser] = useState("");
 
-  // dispatch(getUser(1)).then(data => console.log(data));
+  const dispatch = useDispatch();
+  const currentUserID = useSelector(state => state.session.id);
+
+  useEffect(()=> {
+    if(!currentUser) {
+      dispatch(getUser(currentUserID)).then(data => {
+        setCurrentUser(data.user)
+      });
+    }
+  })
+
+  
+// const currentUser = dispatch(getUser(currentUserID));
+
+  
+  console.log(currentUserID)
+  
+  
   return (
     <div>
       <div className="user-info">
-        <div className="user-name"></div>
+        <div className="user-name">{currentUser ? currentUser.name : ""}</div>
       </div>
       <Link to="/admin/quiz/new">Create Quiz</Link>
     </div>

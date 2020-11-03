@@ -10,5 +10,5 @@ export const receiveUser = user => {
 }
 
 export const getUser = user => dispatch => (
-  UserUtil.getUser(user).then(user => dispatch(receiveUser(UserUtil)))
+  UserUtil.getUser(user).then(user => dispatch(receiveUser(user)))
 )
