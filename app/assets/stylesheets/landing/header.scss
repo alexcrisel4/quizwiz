@@ -6,6 +6,16 @@
   height: 72px;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
 
+  .logo {
+    width: calc(673px * (32 / 163));
+    height: 32px;
+    background-image: image-url('Quizwiz.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 16px;
+  }
+
   .btn-container {
     display: flex;
     justify-content: space-between;

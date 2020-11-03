@@ -1,16 +1,16 @@
 import React, {useState} from "react";
 import {useDispatch} from "react-redux";
-import {signup, login} from "../actions/session_actions";
-import {useLocation} from "react-router-dom";
+import {signup, login} from "../../actions/session_actions";
 
-export default () => {
+export default props => {
+  const { formType } = props;
+
   const dispatch = useDispatch();
+
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
-  const location = useLocation();
-  const formType = location.pathname.split("/")[1];
 
   const handleSubmit = e => {
     e.preventDefault();
