@@ -1,35 +1,30 @@
-export const createQuestion = quesion => (
+export const fetchQuestions = (filter) => (
+  $.ajax({
+    method: "GET",
+    url: "api/questions",
+    data: filter
+  })
+)
+
+
+export const createQuestion = question => (
   $.ajax({
     method: "POST",
     url: "api/questions",
-    data: { quesion }
+    data: { question }
   })
-)
+  )
 
-export const updateQuestion = quesion => (
+
+export const updateQuestion = question => (
   $.ajax({
     method: "PATCH",
-    url: `api/questions/${quesion.id}`,
-    data: quesion
+    url: `api/questions${question.id}`,
+    data: { question }
   })
 )
 
-export const getQuestion = (id) => (
-  $.ajax({
-    method: "GET",
-    url: `api/questions/${id}`
-  })
-)
-
-export const getQuesestions = (questions) => (
-  $.ajax({
-    method: "GET",
-    url: "api/questions",
-    data: questions
-  })
-)
-
-export const deleteQuestion = (id) => (
+export const deleteQuestion = id => (
   $.ajax({
     method: "DELETE",
     url: `api/questions/${id}`

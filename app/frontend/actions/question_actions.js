@@ -1,33 +1,33 @@
-import * as QuestionUtil from "../util/question_util";
+import * as APIUtil from '../util/question_util';
 
-export const RECEIVE_QUESTION = 'RECEIVE_QUESTION';
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
-export const REMOVE_QUESTION = "REMOVE_QUESTION"
+export const REMOVE_QUESTION = "REMOVE_QUESTION";
 
-export const receiveQuestion = question => {
-  return ({
-    type: RECEIVE_QUESTION,
-    question
-  })
-}
+export const receiveQuestions = questions => ({
+  type: RECEIVE_QUESTIONS,
+  questions
+})
 
-export const removeQuesion = id => {
-  return ({
-    type: REMOVE_QUESTION,
-    id
-  })
-}
 
-export const receiveQuestions = questions => {
-  return ({
-    type: RECEIVE_QUESTIONS,
-    questions
-  })}
+export const removeQuestion = id => ({
+  type: REMOVE_QUESTION,
+  id
+})
 
-export const createQuestion = question => dispatch => (
-  QuestionUtil.createQuesion(question).then(question => (dispatch(receiveQuestion(question))))
+
+export const fetchQuestions = (filter) => dispatch => (
+  APIUtil.fetchQuestions(filter).then(questions => dispatch(receiveQuestions(questions)))
 )
 
-export const fetchQuestion = question => dispatch => (
-  QuestionUtil.getQuestion(question).then(question => dispatch(receiveQuestion(question)))
+
+export const createQuestion = (question) => dispatch => (
+  APIUtil.createQuestion(question).then(question => dispatch(receiveQuesion(question)))
+)
+
+export const updateQuestion = (question) => dispatch => (
+  APIUtil.updateQuestion(question).then(question => dispatch(receiveQuestion(question)))
+)
+
+export const deleteQuestion = (id) => dispatch => (
+  APIUtil.deleteQuestion(id).then(question => dispatch(removeQuestion(question)))
 )
