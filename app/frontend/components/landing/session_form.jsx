@@ -1,9 +1,10 @@
-import React, {useState} from "react";
-import {useDispatch} from "react-redux";
-import {signup, login} from "../../actions/session_actions";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { signup, login } from "../../actions/session_actions";
 
 export default props => {
   const { formType } = props;
+  const demoUser = { email: "lizzobeemailing@gmail.com", password: "hunter" };
 
   const dispatch = useDispatch();
 
@@ -12,39 +13,53 @@ export default props => {
   const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
 
+  const processForm = user => (
+    formType === "signup" ? dispatch(signup(user)) : dispatch(login(user))
+  );
+
   const handleSubmit = e => {
     e.preventDefault();
-    let user
-    if(formType === "signup") {
-      user = { email, name: firstName + " " + lastName, password }
+    const user = { email, name: firstName + " " + lastName, password }
+    processForm(user);
+  };
 
-      dispatch(signup(user))
-    } else {
-      user = { email, password}
-      
-      dispatch(login(user))
-    }
-  }
-
-  return(
+  return (
     <div className="session-form-container">
       <form className={formType} onSubmit={e => handleSubmit(e)}>
         <div className="title">Your account details</div>
-        <label htmlFor="email">Email
-          <input placeholder="lizzobeemailing@gmail.com" type="text" value={email} onChange={e=>setEmail(e.currentTarget.value)}/>
+        <label>Email
+          <input
+            type="text"
+            placeholder="lizzobeemailing@gmail.com"
+            value={ email }
+            onChange={e => setEmail(e.currentTarget.value)} />
         </label>
-        {formType === "signup" ? <label htmlFor="first-name">First name
-          <input placeholder="Lizzo" type="text" value={firstName} onChange={e=>setFirstName(e.currentTarget.value)}/>
+        {formType === "signup" ? <label>First name
+          <input
+            type="text"
+            placeholder="Lizzo"
+            value={ firstName }
+            onChange={e => setFirstName(e.currentTarget.value)} />
         </label> : ""}
         {formType === "signup" ?
-        <label htmlFor="last-name">Last name
-          <input placeholder="Bee" type="text" value={lastName} onChange={e=>setLastName(e.currentTarget.value)}/>
-        </label> : "" }
-        <label htmlFor="password">Password
-          <input placeholder="******" type="password" name="" id="" value={password} onChange={e=>setPassword(e.currentTarget.value)}/>
+        <label>Last name
+          <input
+            type="text"
+            placeholder="Bee"
+            value={ lastName }
+            onChange={e=>setLastName(e.currentTarget.value)} />
+        </label> : ""}
+        <label>Password
+          <input placeholder="******" type="password" name="" id="" value={password} onChange={e=>setPassword(e.currentTarget.value)} />
         </label>
-       <input type="submit" value={formType === "signup" ? "Sign Up" : "Login"}/>
+       <input
+         type="submit"
+         value={formType === "signup" ? "Sign Up" : "Login"} />
+       <input
+         type="button"
+         value="Demo Login"
+         onClick={() => dispatch(login(demoUser))} />
       </form>
     </div>
   )
-}
+};
