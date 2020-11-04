@@ -27,34 +27,34 @@ export default () => {
         </label>
         <label htmlFor="quiz-subject">2. Choose a subject
           <div className="subject-container">
-            <button className={selected("Mathematics")}onClick={()=>setSubject("Mathematics")} className="subject">Mathematics</button>
-            <button className={selected("English")} onClick={e=>setSubject(e.currentTarget.value)} value="English" className="subject">English</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Physics" className="subject">Physics</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Chemistry" className="subject">Chemistry</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Science" className="subject">Science</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Computers" className="subject">Computers</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Geography" className="subject">Geography</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="World Languages" className="subject">World Languages</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="History" className="subject">History</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Social Studies" className="subject">Social Studies</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Physical Ed" className="subject">Physical Ed</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Arts" className="subject">Arts</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Fun" className="subject">Fun</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Professional Development" className="subject">Professional Development</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Arcitecture" className="subject">Arcitecture</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Business Design" className="subject">Business Design</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Design" className="subject">Design</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Education" className="subject">Education</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Industrial Technology" className="subject">Industrial Technology</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Journalism" className="subject">Journalism</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Life Skills" className="subject">Life Skills</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Moral Science" className="subject">Moral Science</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Performing Arts" className="subject">Performing Arts</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Philosophy" className="subject">Philosophy</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Religious Studies" className="subject">Religious Studies</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Special Education" className="subject">Special Education</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Specialty" className="subject">Specialty</button>
-            <button onClick={e=>e.setSubject(e.currentTarget.value)} value="Other" className="subject">Other</button>
+            <button className={selected("Mathematics")} onClick={()=>setSubject("Mathematics")} >Mathematics</button>
+            <button className={selected("English")} onClick={()=> setSubject("Mathematics")} >English</button>
+            <button onClick={()=>setSubject("Physics")} className={selected("Physics")}>Physics</button>
+            <button onClick={()=>setSubject("Chemistry")} className={selected("Chemistry")}>Chemistry</button>
+            <button onClick={()=>setSubject("Science")} className={selected("Science")}>Science</button>
+            <button onClick={()=>setSubject("Computers")} className={selected("Computers")}>Computers</button>
+            <button onClick={()=>setSubject("Geography")} className={selected("Geography")}>Geography</button>
+            <button onClick={()=>setSubject("World Languages")} className={selected("World Languages")}>World Languages</button>
+            <button onClick={()=>setSubject("History")} className={selected("History")}>History</button>
+            <button onClick={()=>setSubject("Social Studies")} className={selected("Social Studies")}>Social Studies</button>
+            <button onClick={()=>setSubject("Physical Ed")} className={selected("Physical Ed")}>Physical Ed</button>
+            <button onClick={()=>setSubject("Arts")} className={selected("Arts")}>Arts</button>
+            <button onClick={()=>setSubject("Fun")} className={selected("Fun")}>Fun</button>
+            <button onClick={()=>setSubject("Professional Development")} className={selected("Professional Development")}>Professional Development</button>
+            <button onClick={()=>setSubject("Arcitecture")} className={selected("Arcitecture")}>Arcitecture</button>
+            <button onClick={()=>setSubject("Business Design")} className={selected("Business Design")}>Business Design</button>
+            <button onClick={()=>setSubject("Design")} className={selected("Design")}>Design</button>
+            <button onClick={()=>setSubject("Education")} className={selected("Education")}>Education</button>
+            <button onClick={()=>setSubject("Industrial Technology")} className={selected("Industrial Technology")}>Industrial Technology</button>
+            <button onClick={()=>setSubject("Journalism")} className={selected("Journalism")}>Journalism</button>
+            <button onClick={()=>setSubject("Life Skills")} className={selected("Life Skills")}>Life Skills</button>
+            <button onClick={()=>setSubject("Moral Science")} className={selected("Moral Science")}>Moral Science</button>
+            <button onClick={()=>setSubject("Performing Arts")} className={selected("Performing Arts")}>Performing Arts</button>
+            <button onClick={()=>setSubject("Philosophy")} className={selected("Philosophy")}>Philosophy</button>
+            <button onClick={()=>setSubject("Religious Studies")} className={selected("Religious Studies")}>Religious Studies</button>
+            <button onClick={()=>setSubject("Special Education")} className={selected("Special Education")}>Special Education</button>
+            <button onClick={()=>setSubject("Specialty")} className={selected("Specialty")}>Specialty</button>
+            <button onClick={()=>setSubject("Other")} className={selected("Other")}>Other</button>
           </div>
         </label>
       </form>
