@@ -27,12 +27,15 @@ export default ()=> {
   
   
   return (
-    <div>
+    <div className="sidebar-container">
       <div className="user-info">
+        <div className="profile-picture"></div>
         <div className="user-name">{currentUser ? currentUser.name : ""}</div>
       </div>
-      <Link to="/admin/quiz/new">Create Quiz</Link>
-      <Link to="/admin"><Button>Explore</Button></Link>
+      <Link className="create-button" to="/admin/quiz/new">Create Quiz</Link>
+      <div className="tab-container">
+        <Link className="tab" to="/admin">Explore</Link>
+      </div>
     </div>
   )
 }
