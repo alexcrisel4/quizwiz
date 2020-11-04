@@ -32,6 +32,7 @@ export default ()=> {
         <div className="user-name">{currentUser ? currentUser.name : ""}</div>
       </div>
       <Link to="/admin/quiz/new">Create Quiz</Link>
+      <Link to="/admin">Explore</Link>
     </div>
   )
 }
