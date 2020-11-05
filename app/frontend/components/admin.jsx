@@ -6,10 +6,16 @@ import QuizForm from "./quiz_form";
 
 export default () => {
   return (
-    <div>
-      <Header />
-      <Sidebar />
-      <Route path="/admin/quiz/new" component={QuizForm} />
+    <div className="admin-container">
+      <div className="top-container">
+        <Header />
+      </div>
+      <div className="bottom-container">
+        <Sidebar />
+        <div class="content-container">
+          <Route path="/admin/quiz/new" component={QuizForm} />
+        </div>
+      </div>
     </div>
   )
 }
