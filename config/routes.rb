@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   namespace :api do 
     resources :users, only: [:create, :show, :destroy, :update]
     resource :session, only: [:create, :destroy]
+    resources :questions, only: [:update, :destroy, :show]
     resources :quizzes do 
-      resources :questions do 
+      resources :questions, only: [:create, :index] do 
         resources :answers 
       end 
     end 

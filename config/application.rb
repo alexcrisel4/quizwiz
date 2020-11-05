@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Quizwiz
   class Application < Rails::Application
+    config.action_controller.allow_forgery_protection = false
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 

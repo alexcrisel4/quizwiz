@@ -7,7 +7,20 @@
   .quiz-form {
     display: flex;
     flex-direction: column;
+  
+  .finish-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 24px 24px;
 
+    button {
+    background-color: #00C985;
+    color: #fff;
+    margin-left: 16px;
+    min-width: 134px;
+    }
+  }
 
     label {
       display: flex; 

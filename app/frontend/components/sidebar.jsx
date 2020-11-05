@@ -22,8 +22,7 @@ export default ()=> {
   
 // const currentUser = dispatch(getUser(currentUserID));
 
-  
-  console.log(currentUserID)
+
   
   
   return (
