@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {useLocation} from "react-router-dom";
 import {updateQuiz} from "../actions/quiz_actions";
 import {createQuestion, getQuestions} from "../actions/question_actions"
@@ -12,11 +12,22 @@ export default () => {
   const [questions, setQuestions] = useState([])
   const location = useLocation()
   const quizID = location.pathname.split("/")[3]
-
   const [openForm, setOpenForm] = useState(false);
  
-  dispatch(getQuestions(quizID)).then(data=>setQuestions(data.questions))
-  
+  useEffect(()=> {
+
+    if(!questions.length && !openForm) {
+      dispatch(getQuestions(quizID))
+      .then(data => {
+        setQuestions(Object.values(data.questions))
+        if(!questions.length) {
+          displayForm()
+        }
+      })
+      
+    }
+  })
+
   const displayQuestions = () =>{
     questions.forEach((question, idx) => {
       <div className="question-container">

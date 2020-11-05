@@ -21,7 +21,9 @@ class Api::QuestionsController < ApplicationController
     end
   end 
 
-  
+  def index 
+    @questions = Question.where(quiz_id: params[:quiz_id])
+  end
 
   def destroy 
     @question = Question.find(params[:id])
@@ -30,6 +32,6 @@ class Api::QuestionsController < ApplicationController
   end 
 
   def question_params
-    params.require(:question).permit(:id, :body, :question_one, :question_two, :question_three, :question_four, :correct_answer)
+    params.require(:question).permit(:id, :quiz_id, :body, :question_one, :question_two, :question_three, :question_four, :correct_answer)
   end
 end
