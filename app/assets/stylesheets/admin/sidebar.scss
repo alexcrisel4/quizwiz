@@ -1,12 +1,10 @@
 .sidebar-container {
-  position: absolute;
-  top: 56px;
-  height: 100vh;
   width: 200px;
+  height: calc(100vh - 56px);
   transition: 0.2s all ease-in-out;
   background-color: #fff;
   box-shadow: 1px 0px 0px rgba(9,9,9,0.1);
-  
+
   .create-button {
     width: 168px;
     height: 40px;
@@ -23,7 +21,7 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    
+
 
     &:hover {
       cursor: pointer;
@@ -50,10 +48,11 @@
 
     }
   }
+
   .user-info {
     display: flex;
     align-items: center;
-    margin: 16px;
+    padding: 16px;
 
     .profile-picture {
       width: 40px;
@@ -69,7 +68,7 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      
+
 
       // &:hover {
       //   cursor: pointer;
