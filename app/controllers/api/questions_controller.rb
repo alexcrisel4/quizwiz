@@ -30,6 +30,6 @@ class Api::QuestionsController < ApplicationController
   end 
 
   def question_params
-    params.require(:question).permit(:id, :body)
+    params.require(:question).permit(:id, :body, :question_one, :question_two, :question_three, :question_four, :correct_answer)
   end
 end

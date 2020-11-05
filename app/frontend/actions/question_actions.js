@@ -15,8 +15,8 @@ export const removeQuestion = id => ({
 })
 
 
-export const fetchQuestions = (quizID) => dispatch => (
-  QuesionUtil.fetchQuestions(quizID).then(questions => dispatch(receiveQuestions(questions)))
+export const getQuestions = (quizID) => dispatch => (
+  QuestionUtil.fetchQuestions(quizID).then(questions => dispatch(receiveQuestions(questions)))
 )
 
 
