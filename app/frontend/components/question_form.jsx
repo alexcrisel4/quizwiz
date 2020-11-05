@@ -21,7 +21,7 @@ export default props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    closeForm();
+    
     dispatch(createQuestion({
       body, 
       quiz_id: quizID, 
@@ -29,7 +29,9 @@ export default props => {
       answer_one: answerOne, 
       answer_three: answerThree, 
       answer_two: answerTwo,
-      correct_answer: correctAnswer }))  
+      correct_answer: correctAnswer
+    })).then(() => closeForm())  
+   
   }
 
   const selected = (correct) => {
