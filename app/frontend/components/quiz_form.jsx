@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createQuiz } from "../actions/quiz_actions";
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
+import {Link} from 'react-router-dom';
 
 export default () => {
   const dispatch = useDispatch();
@@ -20,8 +21,8 @@ export default () => {
   }
 
   return (
-    <div className="create-quiz-form-container">
-      <form onSubmit={e => handleSubmit(e)}>
+    <div className="quiz-form-container">
+      <form className="quiz-form" onSubmit={e => handleSubmit(e)}>
         <label htmlFor="quiz-title">1. Name this quiz
           <input placeholder="Quiz name"type="text" value={title} onChange={e => setTitle(e.currentTarget.value)}/>
         </label>
@@ -57,6 +58,10 @@ export default () => {
             <button onClick={()=>setSubject("Other")} className={selected("Other")}>Other</button>
           </div>
         </label>
+        <div className="finish-buttons">
+        <Link to="/admin">Cancel</Link>
+        <button type="submit" >Next</button>
+        </div>
       </form>
     </div>
   )
