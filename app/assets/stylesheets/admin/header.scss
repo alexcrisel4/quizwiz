@@ -1,0 +1,40 @@
+.admin-header-container {
+  display: flex;
+  align-items: center;
+
+  height: 56px;
+  background-color: #461a42;
+  box-shadow: 0 0 4px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.24);
+
+  .logo {
+    width: calc(673px * (26 / 163));
+    height: 26px;
+    background-image: image-url('Quizwiz.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 20px;
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+
+    height: 40px;
+    min-width: 240px;
+    border-radius: 8px;
+    background-color: rgba(255,255,255,0.1);
+
+    transition: 0.14s all ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(255,255,255,0.15);
+    }
+
+    input {
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+}
