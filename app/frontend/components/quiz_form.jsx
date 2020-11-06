@@ -62,9 +62,10 @@ export default () => {
             <button type="button" onClick={()=>setSubject("Other")} className={selected("Other")}>Other</button>
           </div>
         </label>
+        <div className="line"></div>
         <div className="finish-buttons">
-        <Link to="/admin">Cancel</Link>
-        <button type="submit">Next</button>
+          <Link to="/admin">Cancel</Link>
+          <button type="submit">Next</button>
         </div>
       </form>
     </div>

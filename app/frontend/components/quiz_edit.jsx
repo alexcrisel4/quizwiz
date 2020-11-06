@@ -64,8 +64,7 @@ export default () => {
     <div className="quiz-container">
       <button onClick={()=>displayForm()}>New Question</button>
         {displayQuestions()}
-      {openForm ? <QuestionForm closeForm={closeForm} /> : ""}
-        
+      {openForm ? <QuestionForm closeForm={closeForm} /> : ""}  
     </div>
     
   )

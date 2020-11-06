@@ -1,0 +1,22 @@
+.question-container {
+    margin-top: 24px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.1), 0 2px 2px rgba(0,0,0,0.15);
+    width: 604px;
+    height: 209px;
+  
+    
+    .question-number {
+      font-size: 16px;
+      font-weight: 500;
+      background-color: #F2F2F2;
+      margin-left: 16px;
+      
+    }
+
+    .question-body {
+      margin-left: 16px;
+    }
+}
+

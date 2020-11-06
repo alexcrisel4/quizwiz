@@ -62,7 +62,7 @@ export default props => {
           </div>
         <div className="cancel-save-container">
           <Link to={`/admin/quiz/${quizID}`}>Cancel</Link>
-          <button type="submit" >Next</button>
+          <button type="submit" >Save</button>
         </div>
       </form>
 
