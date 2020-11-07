@@ -62,7 +62,11 @@
           height: 15px;
           width: 15px;
           border-radius: 50%;
-          background-color: black;
+          background-color: red;
+
+          &.correct {
+            background-color: green;
+          }
         }
         .choice {
           align-items: center;
