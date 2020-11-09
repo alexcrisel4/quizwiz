@@ -1,17 +1,16 @@
-import React, {useState, useEffect} from "react";
-import {Link} from "react-router-dom";
-import { useSelector, useDispatch } from 'react-redux';
-import {getUser} from "../actions/user_actions";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { getUser } from "../actions/user_actions";
+import { logout } from "../actions/session_actions";
 
-
-
-export default ()=> {
+export default () => {
   const [currentUser, setCurrentUser] = useState("");
 
   const dispatch = useDispatch();
   const currentUserID = useSelector(state => state.session.id);
 
-  useEffect(()=> {
+  useEffect(() => {
     if(!currentUser) {
       dispatch(getUser(currentUserID)).then(data => {
         setCurrentUser(data.user)
@@ -19,12 +18,6 @@ export default ()=> {
     }
   })
 
-  
-// const currentUser = dispatch(getUser(currentUserID));
-
-
-  
-  
   return (
     <div className="sidebar-container">
       <div className="user-info">
@@ -35,6 +28,7 @@ export default ()=> {
       <div className="tab-container">
         <Link className="tab" to="/admin">Explore</Link>
       </div>
+      <button className="logout-btn" onClick={() => dispatch(logout())}>Logout</button>
     </div>
   )
 }

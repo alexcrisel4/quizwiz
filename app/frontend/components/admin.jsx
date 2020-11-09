@@ -13,7 +13,7 @@ export default () => {
       </div>
       <div className="bottom-container">
         <Sidebar />
-        <div class="content-container">
+        <div className="content-container">
           <Route path="/admin/quiz/new" component={QuizForm} />
           <Route path="/admin/quiz/:id/edit" component={QuizEdit}/>
         </div>
