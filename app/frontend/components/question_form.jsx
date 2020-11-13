@@ -21,7 +21,7 @@ export default props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    
+    console.log(correctAnswer)
     dispatch(createQuestion({
       body, 
       quiz_id: quizID, 
@@ -34,6 +34,10 @@ export default props => {
    
   }
 
+  const answer = (num) => {
+    setCorrectAnswer(num)
+  }
+
   const selected = (correct) => {
     return correctAnswer === correct ? "selected" : ""
   }
@@ -41,22 +45,22 @@ export default props => {
   return (
     <div className="question-form-container">
       <form onSubmit={e => handleSubmit(e)}>
-          <input placeholder="Write your question here" type="text" value={body} onChange={e => setBody(e.currentTarget.value)}/>
+          <textarea className="question-input"placeholder="Write your question here" type="text" value={body} onChange={e => setBody(e.currentTarget.value)}/>
           <div className="answers-container">
             <div className="option">
-              <button type="button" onClick={()=>setCorrectAnswer(1)} className={selected(1)}></button>
+              <button type="button" onClick={()=>answer(1)} className={selected(1)}></button>
               <input value={answerOne} onChange={e=>setAnswerOne(e.currentTarget.value)} placeholder ="Answer option 1" type="text"/>
             </div>
           <div className="option">
-            <button type="button" onClick={() => setCorrectAnswer(2)} className={selected(2)}></button>
+            <button type="button" onClick={() => answer(2)} className={selected(2)}></button>
             <input value={answerTwo} onChange={e => setAnswerTwo(e.currentTarget.value)} placeholder="Answer option 2" type="text" />
           </div>
           <div className="option">
-            <button type="button" onClick={() => setCorrectAnswer(3)} className={selected(3)}></button>
+            <button type="button" onClick={() => answer(3)} className={selected(3)}></button>
             <input value={answerThree} onChange={e => setAnswerThree(e.currentTarget.value)} placeholder="Answer option 3" type="text" />
           </div>
           <div className="option">
-            <button type="button" onClick={() => setCorrectAnswer(4)} className={selected(4)}></button>
+            <button type="button" onClick={() => answer(4)} className={selected(4)}></button>
             <input value={answerFour} onChange={e => setAnswerFour(e.currentTarget.value)} placeholder="Answer option 4" type="text" />
           </div>
           </div>
