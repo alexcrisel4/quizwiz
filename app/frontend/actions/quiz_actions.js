@@ -21,7 +21,7 @@ export const removeQuiz = id => {
 export const receiveQuizzes = quizzes => {
   return({
     type: RECEIVE_QUIZZES,
-    quizzes 
+    quizzes
   })
 }
 
@@ -32,3 +32,8 @@ export const createQuiz = quiz => dispatch => (
 export const fetchQuiz = quiz => dispatch => (
   QuizUtil.getQuiz(quiz).then(quiz => dispatch(receiveQuiz(quiz)))
 )
+
+export const getQuizzes = quizzes => dispatch => (
+  QuizUtil.getQuizzes(quizzes)
+    .then(quiz => dispatch(receiveQuizzes(quizzes)))
+);
