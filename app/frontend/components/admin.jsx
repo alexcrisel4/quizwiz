@@ -1,13 +1,23 @@
 import React from "react";
-import Sidebar from "./sidebar"
-import {Route} from "react-router-dom";
-import QuizForm from "./quiz_form"
+import { Route } from "react-router-dom";
+import Header from "./admin/header";
+import Sidebar from "./sidebar";
+import QuizForm from "./quiz_form";
+import QuizEdit from "./quiz_edit";
 
 export default () => {
   return (
-    <div>
-      <Sidebar/>
-      <Route path="/admin/quiz/new" component={QuizForm}/>
+    <div className="admin-container">
+      <div className="top-container">
+        <Header />
+      </div>
+      <div className="bottom-container">
+        <Sidebar />
+        <div className="content-container">
+          <Route path="/admin/quiz/new" component={QuizForm} />
+          <Route path="/admin/quiz/:id/edit" component={QuizEdit}/>
+        </div>
+      </div>
     </div>
   )
 }

@@ -8,7 +8,7 @@ const App = () => (
     <AuthRoute exact path ='/' component={Landing} />
     <AuthRoute path='/login' component={Landing} />
     <AuthRoute path='/signup' component={Landing} />
-    <Route path='/admin' component={Admin} />
+    <ProtectedRoute path='/admin' component={Admin} />
   </div>
 );
 
