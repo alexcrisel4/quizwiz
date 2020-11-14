@@ -4,12 +4,13 @@
   margin-top: 36px;
   margin-bottom: 24px;
   transition: 0.2s opacity ease-in-out;
-  position: absolute;
+ 
   z-index: 1;
   // width: 100%; 
   min-width: 700px;
-  border: .5px solid black;
+
   background-color: #fff;
+  border-radius: 8px;
   form {
     
   min-height: 400px;
@@ -18,6 +19,10 @@
   align-items: center;
 
   .question-input {
+    border-style: solid;
+    border-color:#EDEDED;
+    border-width: .5px;
+
     box-sizing: border-box;
     line-height: 1.42;
     height: 100%;
@@ -67,7 +72,10 @@
   }
 
   .cancel-save-container {
-    
+    margin-top: 16px;
+    display: flex;
+    align-items: flex-end;
+
     button {
     background-color: #00C985;
     height: 28px;
@@ -85,11 +93,12 @@
   }
 
    a {
+      padding: 4px 12px;
       background-color: #fff;
-    color: #6B7C93;
-    margin-right: 8px;
-    border: 2px solid #eee;
-    border-bottom: 2px solid rgba(0,0,0,0.12);
+      color: #6B7C93;
+      margin-right: 8px;
+      border: 2px solid #eee;
+      border-bottom: 2px solid rgba(0,0,0,0.12);
     }
 }
 }
