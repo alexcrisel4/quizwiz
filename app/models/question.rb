@@ -1,5 +1,5 @@
 class Question < ApplicationRecord
-  validates :body, :quiz_id, presence: true 
+  validates :body, :quiz_id, :correct_answer, presence: true 
 
 
   belongs_to :quiz
