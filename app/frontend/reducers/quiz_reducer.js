@@ -3,7 +3,6 @@ import {RECEIVE_QUIZ, RECEIVE_QUIZZES, REMOVE_QUIZ} from '../actions/quiz_action
 
 
 
-let newState
 const quizReducer = (state = {}, action) => {
 
   switch (action.type) {

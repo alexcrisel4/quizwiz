@@ -32,13 +32,46 @@ export default () => {
       .then(data => setQuestions(Object.values(data.questions)))
   },[])
 
+  
+
   const displayQuestions = () =>{
     const questionContainers = []
     questions.forEach((question, idx) => {
+
+      const correctAnswer = (choice) => { 
+       return question.correct_answer === choice ? " correct" : ""
+      }
+
+
       questionContainers.push(
       <div className="question-container">
-        <div classname="question-number">Question {idx + 1}</div>
+        <div className="question-number">Question {idx + 1}</div>
         <div className="question-body">{question.body}</div>
+        <div className="divider">
+            <div className="text">answer choices</div>
+        </div>
+        <div className="answers">
+          <div className="side">
+            <div className="choice">
+                <div className={"circle" + correctAnswer(1)}></div>
+                <div> {question.answer_one}</div>
+            </div>
+              <div className="choice">
+                <div className={"circle" + correctAnswer(2)}></div>
+                <div> {question.answer_two}</div>
+              </div>
+              </div>
+            <div className="side">
+                <div className="choice">
+                <div className={"circle" + correctAnswer(3)}></div>
+                  <div> {question.answer_three}</div>
+                </div>
+                <div className="choice">
+                <div className={"circle" + correctAnswer(4)}></div>
+                  <div> {question.answer_four}</div>
+                </div>
+          </div>
+        </div>
       </div>)
      
     })
@@ -64,8 +97,7 @@ export default () => {
     <div className="quiz-container">
       <button onClick={()=>displayForm()}>New Question</button>
         {displayQuestions()}
-      {openForm ? <QuestionForm closeForm={closeForm} /> : ""}
-        
+      {openForm ? <QuestionForm closeForm={closeForm} /> : ""}  
     </div>
     
   )
