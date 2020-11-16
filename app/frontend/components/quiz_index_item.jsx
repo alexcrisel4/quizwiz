@@ -1,17 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default props => {
   const { quiz } = props;
 
-  return (<Link className="quiz-index-item-container" to={"/admin/quiz/" + quiz.id}>
+  const history = useHistory();
+
+  const goToQuiz = () => history.push("/admin/quiz/" + quiz.id);
+
+  return (<div className="quiz-index-item-container" onClick={() => goToQuiz()}>
     <div className="header-container">
       <div className="image"></div>
       <div className="stats-container">
-        <div>{quiz.questions.length}</div>
-        <div>{quiz.timesTaken}</div>
+        <div>{quiz.num_questions} Qs</div>
+        {/* <div>{quiz.times_taken}</div> */}
       </div>
     </div>
     <div className="title">{quiz.title}</div>
-  </Link>)
+  </div>)
 }
