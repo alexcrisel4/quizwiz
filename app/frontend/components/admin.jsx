@@ -4,6 +4,7 @@ import Header from "./admin/header";
 import Sidebar from "./sidebar";
 import QuizForm from "./quiz_form";
 import QuizEdit from "./quiz_edit";
+import QuizIndex from "./quiz_index";
 
 export default () => {
   return (
@@ -14,6 +15,7 @@ export default () => {
       <div className="bottom-container">
         <Sidebar />
         <div className="content-container">
+          <Route path="/admin" component={QuizIndex}/>
           <Route path="/admin/quiz/new" component={QuizForm} />
           <Route path="/admin/quiz/:id/edit" component={QuizEdit}/>
         </div>
