@@ -1,11 +1,20 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getQuizzes } from "../actions/quiz_actions";
 import QuizIndexItem from "./quiz_index_item";
 
 export default () => {
-  const quizzes = Object.values(useSelector(state => state.entities.quizzes));
+  const dispatch = useDispatch();
 
+  const [quizzes, setQuizzes] = useState([]);
   const [query, setQuery] = useState("");
+
+  useEffect(() => updateQuizIndex(), [])
+
+  const updateQuizIndex = () => {
+    dispatch(getQuizzes())
+      .then(data => setQuizzes(Object.values(data.quizzes)))
+  }
 
   const renderQuizzes = () => {
     let quizList = [];

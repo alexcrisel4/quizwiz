@@ -29,11 +29,11 @@ export const createQuiz = quiz => dispatch => (
   QuizUtil.createQuiz(quiz).then(quiz => (dispatch(receiveQuiz(quiz))))
 )
 
-export const fetchQuiz = quiz => dispatch => (
+export const getQuiz = quiz => dispatch => (
   QuizUtil.getQuiz(quiz).then(quiz => dispatch(receiveQuiz(quiz)))
 )
 
-export const getQuizzes = quizzes => dispatch => (
-  QuizUtil.getQuizzes(quizzes)
-    .then(quiz => dispatch(receiveQuizzes(quizzes)))
+export const getQuizzes = () => dispatch => (
+  QuizUtil.getQuizzes()
+    .then(quizzes => dispatch(receiveQuizzes(quizzes)))
 );
