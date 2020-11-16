@@ -5,6 +5,7 @@
   border-radius: 8px;
   box-shadow: 0 3px 6px 1px rgba(0,0,0,0.1),0 0 0 1px rgba(0,0,0,0.05);
 
+  cursor: pointer;
   transition: scale 0.1s ease-out, box-shadow 0.1s ease-out;
 
   &:hover {
@@ -12,22 +13,27 @@
     transform: scale(1.01);
   }
 
-  .header-container {
+  >.header-container {
+    position: relative;
+
     height: 112px;
     width: 100%;
 
     .image {
+      position: absolute;
+
       height: 100%;
       width: 100%;
+      background-color: green;
       background-size: cover;
       background-repeat: no-repeat;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
     }
 
     .stats-container {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      bottom: 0px;
 
       display: flex;
       justify-content: space-between;
@@ -47,9 +53,11 @@
     }
   }
 
-
   .title {
     height: 86px;
     padding: 8px 12px 12px;
+
+    font-size: 16px;
+    font-weight: 600;
   }
 }

@@ -4,19 +4,18 @@
 
   background-color: #f2f2f2;
 
-
-  .top-container {
+  >.top-container {
 
   }
 
-  .content-container{
-    overflow-y: scroll;
-    height: calc(100vh - 56px);
-  }
-
-  .bottom-container {
+  >.bottom-container {
     display: flex;
     max-width: 100vw;
     overflow-y: scroll;
+
+    .content-container{
+      overflow-y: scroll;
+      height: calc(100vh - 56px);
+    }
   }
 }
