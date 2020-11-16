@@ -2,7 +2,6 @@ import React from "react";
 import { Route } from "react-router-dom";
 import Header from "./admin/header";
 import Sidebar from "./sidebar";
-import QuizIndex from "./quiz_index";
 import QuizForm from "./quiz_form";
 import QuizEdit from "./quiz_edit";
 import QuizIndex from "./quiz_index";
