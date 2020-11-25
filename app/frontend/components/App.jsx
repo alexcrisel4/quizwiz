@@ -2,7 +2,7 @@ import React from "react";
 import {Route} from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../util/route_util.js";
 import Landing from "./landing/landing";
-import Admin from "./admin"
+import Admin from "./admin/admin"
 const App = () => (
   <div>
     <AuthRoute exact path ='/' component={Landing} />

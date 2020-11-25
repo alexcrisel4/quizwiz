@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { getUser } from "../actions/user_actions";
-import { logout } from "../actions/session_actions";
+import { getUser } from "../../actions/user_actions";
+import { logout } from "../../actions/session_actions";
 
 export default () => {
   const [currentUser, setCurrentUser] = useState("");

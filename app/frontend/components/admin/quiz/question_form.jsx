@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { useDispatch } from "react-redux";
-import { createQuestion } from "../actions/question_actions";
+import { createQuestion } from "../../../actions/question_actions";
 import {useLocation, Link} from "react-router-dom"
 
 

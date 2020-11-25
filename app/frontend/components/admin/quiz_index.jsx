@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getQuizzes } from "../actions/quiz_actions";
+import { getQuizzes } from "../../actions/quiz_actions";
 import QuizIndexItem from "./quiz_index_item";
 
 export default () => {

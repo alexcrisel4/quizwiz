@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {useLocation} from "react-router-dom";
-import {updateQuiz} from "../actions/quiz_actions";
-import {createQuestion, getQuestions} from "../actions/question_actions"
+import {updateQuiz} from "../../../actions/quiz_actions";
+import {createQuestion, getQuestions} from "../../../actions/question_actions"
 import {useDispatch, useSelector} from "react-redux";
 import QuestionForm from "./question_form";
 

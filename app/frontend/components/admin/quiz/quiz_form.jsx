@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createQuiz } from "../actions/quiz_actions";
+import { createQuiz } from "../../../actions/quiz_actions";
 import { useSelector } from 'react-redux';
 import {Link, useHistory} from 'react-router-dom';
 
