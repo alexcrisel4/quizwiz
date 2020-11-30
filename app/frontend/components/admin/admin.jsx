@@ -5,6 +5,7 @@ import Sidebar from "./sidebar";
 import QuizForm from "./quiz/quiz_form";
 import QuizEdit from "./quiz/quiz_edit";
 import QuizIndex from "./quiz_index";
+import QuizShow from "./quiz_take/quiz_show"
 
 export default () => {
   return (
@@ -18,6 +19,7 @@ export default () => {
           <Route exact path="/admin" component={QuizIndex} />
           <Route path="/admin/quiz/new" component={QuizForm} />
           <Route path="/admin/quiz/:id/edit" component={QuizEdit} />
+          <Route exact path="/admin/quiz/:id" component={QuizShow} />
         </div>
       </div>
     </div>

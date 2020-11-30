@@ -25,6 +25,10 @@ export const getQuestions = (quizID) => dispatch => (
   QuestionUtil.fetchQuestions(quizID).then(questions => dispatch(receiveQuestions(questions)))
 )
 
+export const getQuestion = (questionId) => dispatch => (
+  QuestionUtil.fetchQuestion(questionId).then(question => dispatch(receiveQuestion(question)))
+)
+
 
 export const createQuestion = (question) => dispatch => (
   QuestionUtil.createQuestion(question).then(question => dispatch(receiveQuestion(question)))
