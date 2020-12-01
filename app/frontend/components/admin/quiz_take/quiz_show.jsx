@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {getQuiz} from "../../../actions/quiz_actions";
 import {getQuestion} from "../../../actions/question_actions";
 import {useLocation} from "react-router-dom";
@@ -15,20 +15,15 @@ export default () => {
   let questionIds = [];
 
   const updateQuiz = () => {
-      questionIds.forEach(id => {
-        dispatch(getQuestion(parseInt(id))).then(qdata => (
-          questionList.push(qdata.question))
-        )
+    questionIds.forEach(id => {
+      dispatch(getQuestion(parseInt(id))).then(data => {
+        questionList.push(data.question)
+        setQuestions(questionList)
       })
-      setQuestions(questionList)  
+    }) 
   }
 
-  useEffect(() => {
-    if(!questions.length && !questionIds.length) {
-      updateQuiz()
-    }
-  })
- 
+
   useEffect(()=>{
     dispatch(getQuiz(quizId)).then(data=>{
       quiz = data.quiz
@@ -42,8 +37,9 @@ export default () => {
   
   return (
     <div>
-      {questions[0] ? questions[0].answer_one : "I'm blank"}
-      {questionList[0] ? questionList[0].answer_one : "Question list is blank"}
+      {questions[0] ? questions[0]["answer_one"]: "Questions is blank"}
+      {questionList[0] ? questionList[0]["answer_one"] : "Question list is blank"}
+      
     </div>
   )
 

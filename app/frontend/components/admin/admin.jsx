@@ -6,7 +6,7 @@ import QuizForm from "./quiz/quiz_form";
 import QuizEdit from "./quiz/quiz_edit";
 import QuizIndex from "./quiz_index";
 import QuizShow from "./quiz_take/quiz_show"
-
+import QuizTake from "./quiz_take/quiz_take"
 export default () => {
   return (
     <div className="admin-container">
