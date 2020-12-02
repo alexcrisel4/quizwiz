@@ -3,70 +3,52 @@ import { useDispatch, useSelector } from "react-redux";
 import { getQuiz } from "../../../actions/quiz_actions";
 import { getQuestion, getQuizQuestions, getQuestions } from "../../../actions/question_actions";
 import { useLocation } from "react-router-dom";
+import QuizTakeQuestionItem from "./quiz_take_question_item";
 
 export default () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const quizId = location.pathname.split("/")[3];
-  // let quiz = useSelector(state=>state.quizzes[quizId])
+
   const [questions, setQuestions] = useState([]);
-  
+  const [answers, setAnswers] = useState([]);
 
   const updateQuiz = () => {
     dispatch(getQuestions(quizId)).then( data => {
-      setQuestions(Object.values(data.questions)) 
-    })  
+      setQuestions(Object.values(data.questions))
+    })
   }
 
   useEffect(() => {
     updateQuiz()
   }, [])
 
+  const updateAnswers = (questionIdx, answer) => {
+    let copyAnswers = Array.from(answers);
+
+    copyAnswers[questionIdx] = answer;
+
+    setAnswers(copyAnswers);
+  }
+
+  const handleSubmit = () => {
+    
+  }
+
   const questionBox = () => {
     let questionArr = [];
-    questions.forEach(question => {
+    questions.forEach((question, idx) => {
       questionArr.push(
-        <div className="question-container">
-          <div className="question-number">Question</div>
-          <div className="question-body">{question.body}</div>
-          <div className="divider">
-            <div className="text">answer choices</div>
-          </div>
-          <div className="answers">
-            <div className="side">
-              <div className="choice">
-                <div className={"circle"}></div>
-                <div> {question.answer_one}</div>
-              </div>
-              <div className="choice">
-                <div className={"circle"}></div>
-                <div> {question.answer_two}</div>
-              </div>
-            </div>
-            <div className="side">
-              <div className="choice">
-                <div className={"circle"}></div>
-                <div> {question.answer_three}</div>
-              </div>
-              <div className="choice">
-                <div className={"circle"}></div>
-                <div> {question.answer_four}</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <QuizTakeQuestionItem updateAnswers={updateAnswers} question={question} idx={idx} />
       )
     })
     return questionArr;
   }
-  
+
   return (
-    <div>
+    <div className="quiz-take-container">
       {questions[0] ? questionBox() : "Questions is blank"}
+      <button type="button">Submit Answers</button>
     </div>
   )
-
-
-
 }
-
