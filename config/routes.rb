@@ -10,5 +10,6 @@ Rails.application.routes.draw do
       end 
     end 
   end
+  get '/api/quizzes/:id/take_quiz', to: 'api/questions#quiz_questions', as: 'quiz_questions'
   root to: "static_pages#root"
 end

@@ -8,6 +8,11 @@ class Api::QuestionsController < ApplicationController
     end
   end 
 
+  def quiz_questions 
+    @questions = Question.where(quiz_id: params[:quiz_id])
+    render :index
+  end
+
   def show 
     @question = Question.find(params[:id])
   end 

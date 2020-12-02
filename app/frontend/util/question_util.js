@@ -5,6 +5,20 @@ export const fetchQuestions = (id) => (
   })
 )
 
+export const fetchQuizQuestions = (id) => (
+  $.ajax({
+    method: "GET",
+    url: `api/quizzes/${id}/take_quiz`
+  })
+)
+
+export const fetchQuestion = (id) => (
+  $.ajax({
+    method: "GET",
+    url: `api/questions/${id}`
+  })
+)
+
 
 export const createQuestion = question => (
   $.ajax({

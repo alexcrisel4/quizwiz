@@ -20,9 +20,16 @@ export const removeQuestion = id => ({
   id
 })
 
+export const getQuizQuestions = (id) => dispatch => (
+  QuestionUtil.fetchQuizQuestions(id).then(questions => dispatch(receiveQuestions(questions)))
+)
 
-export const getQuestions = (quizID) => dispatch => (
-  QuestionUtil.fetchQuestions(quizID).then(questions => dispatch(receiveQuestions(questions)))
+export const getQuestions = (quizId) => dispatch => (
+  QuestionUtil.fetchQuestions(quizId).then(questions => dispatch(receiveQuestions(questions)))
+)
+
+export const getQuestion = (questionId) => dispatch => (
+  QuestionUtil.fetchQuestion(questionId).then(question => dispatch(receiveQuestion(question)))
 )
 
 
