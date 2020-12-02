@@ -7,6 +7,10 @@ import QuizEdit from "./quiz/quiz_edit";
 import QuizIndex from "./quiz_index";
 import QuizShow from "./quiz_take/quiz_show"
 import QuizTake from "./quiz_take/quiz_take"
+import {useDispatch} from "react-redux";
+import {getQuiz} from "../../actions/quiz_actions";
+import {getQuestion} from "../../actions/question_actions";
+
 export default () => {
   return (
     <div className="admin-container">
@@ -19,7 +23,7 @@ export default () => {
           <Route exact path="/admin" component={QuizIndex} />
           <Route path="/admin/quiz/new" component={QuizForm} />
           <Route path="/admin/quiz/:id/edit" component={QuizEdit} />
-          <Route exact path="/admin/quiz/:id" component={QuizShow} />
+          <Route exact path="/admin/quiz/:id" component={QuizTake}/>
         </div>
       </div>
     </div>

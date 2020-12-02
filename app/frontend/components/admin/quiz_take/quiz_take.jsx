@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getQuiz } from "../../../actions/quiz_actions";
-import { getQuestion, getQuestions } from "../../../actions/question_actions";
+import { getQuestion, getQuizQuestions, getQuestions } from "../../../actions/question_actions";
 import { useLocation } from "react-router-dom";
 
 export default () => {
@@ -10,54 +10,59 @@ export default () => {
   const quizId = location.pathname.split("/")[3];
   // let quiz = useSelector(state=>state.quizzes[quizId])
   const [questions, setQuestions] = useState([]);
-
-  let questionList = [];
-  let questionIds = [];
+  
 
   const updateQuiz = () => {
-    // if (!questionList.length) {
-      // questionIds.forEach(id => {
-      //   dispatch(getQuestion(parseInt(id))).then(data => (
-      //     questionList.push(data.question))
-      //   )
-        dispatch(getQuestions(quizId)).then
-          (data=>{
-            setQuestions(Object.values(data.questions))
-            debugger
-          })
-      // }
-
-      // setQuestions(questionList)
-
-      // console.log("questionList", questionList[0])
-      console.log(questions)
-      
-    // }
+    dispatch(getQuestions(quizId)).then( data => {
+      setQuestions(Object.values(data.questions)) 
+    })  
   }
 
   useEffect(() => {
-    // questionIds = Object.keys(quiz.questions)
     updateQuiz()
   }, [])
 
-  useEffect(() => {
-    if (!questions.length) {
-      updateQuiz()
-      // debugger;
-    }
-  })
-
-
- 
-
-
-
-
+  const questionBox = () => {
+    let questionArr = [];
+    questions.forEach(question => {
+      questionArr.push(
+        <div className="question-container">
+          <div className="question-number">Question</div>
+          <div className="question-body">{question.body}</div>
+          <div className="divider">
+            <div className="text">answer choices</div>
+          </div>
+          <div className="answers">
+            <div className="side">
+              <div className="choice">
+                <div className={"circle"}></div>
+                <div> {question.answer_one}</div>
+              </div>
+              <div className="choice">
+                <div className={"circle"}></div>
+                <div> {question.answer_two}</div>
+              </div>
+            </div>
+            <div className="side">
+              <div className="choice">
+                <div className={"circle"}></div>
+                <div> {question.answer_three}</div>
+              </div>
+              <div className="choice">
+                <div className={"circle"}></div>
+                <div> {question.answer_four}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    })
+    return questionArr;
+  }
+  
   return (
     <div>
-      {questions[0] ? questions[0]["answer_one"]: "Questions is blank"}
-      {questionList[0] ? questionList[0]["answer_one"] : "Question list is blank"}
-
+      {questions[0] ? questionBox() : "Questions is blank"}
     </div>
   )
 
